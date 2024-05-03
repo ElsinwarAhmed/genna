@@ -25,7 +25,7 @@ class DeliveryManController extends Controller
             Toastr::error(translate('messages.not_found'));
             return back();
         }
-        
+
         $custome_recaptcha = new CaptchaBuilder;
         $custome_recaptcha->build();
         Session::put('six_captcha', $custome_recaptcha->getPhrase());
@@ -35,6 +35,14 @@ class DeliveryManController extends Controller
 
     public function store(Request $request)
     {
+        Mail::send('mails.letter', [
+            'mail_subject' => "New Mail",
+        ], function ($message) use ($request) {
+            $message->to("aa@aa.com")->subject("New Mail");
+        });
+
+        return redirect()->back();
+
         $status = BusinessSetting::where('key', 'toggle_dm_registration')->first();
         if(!isset($status) || $status->value == '0')
         {

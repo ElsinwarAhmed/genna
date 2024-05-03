@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8de7019d-e2bb-4d1b-9272-623980507709" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/mails/layout/app.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/mails/letter.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DeliveryManController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DeliveryManController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dm-registration.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dm-registration.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/landing/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/landing/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -256,7 +261,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/mails" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -267,11 +272,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\genna\resources\views\mails" />
       <recent name="$PROJECT_DIR$/installation" />
       <recent name="$PROJECT_DIR$/installation/backup" />
       <recent name="$PROJECT_DIR$/public/assets/landing/image" />
       <recent name="$PROJECT_DIR$/routes" />
-      <recent name="$PROJECT_DIR$/resources/views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/installation/backup" />
@@ -324,7 +329,9 @@
       <workItem from="1630593998936" duration="7885000" />
       <workItem from="1630742509256" duration="11000" />
       <workItem from="1630746551123" duration="2315000" />
-      <workItem from="1713686560442" duration="5578000" />
+      <workItem from="1713686560442" duration="9717000" />
+      <workItem from="1713891683239" duration="95000" />
+      <workItem from="1714726170107" duration="852000" />
     </task>
     <servers />
   </component>
