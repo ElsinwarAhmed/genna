@@ -1904,24 +1904,24 @@
                     </div>
                 </div>
             </div>
-            <div class="owl-theme owl-carousel" id="sync1">
-                @foreach ($modules as $key => $item)
-                    <div class="row flex-wrap-reverse justify-content-center">
-                        <div class="col-lg-6 col-md-8">
-                            <div class="venture-content mt-4">
-                                <div class="venture-content-box">
-                                    {!! $item->description ?? '' !!}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-8">
-                            <div class="venture-img mx-1">
-                                <img src="{{ asset('storage/app/public/module/') }}/{{ isset($item['thumbnail']) ? $item['thumbnail'] : null }}" onerror="this.src='{{asset('public/assets/admin/img/100x100/2.png')}}'" alt="">
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
+{{--            <div class="owl-theme owl-carousel" id="sync1">--}}
+{{--                @foreach ($modules as $key => $item)--}}
+{{--                    <div class="row flex-wrap-reverse justify-content-center">--}}
+{{--                        <div class="col-lg-6 col-md-8">--}}
+{{--                            <div class="venture-content mt-4">--}}
+{{--                                <div class="venture-content-box">--}}
+{{--                                    {!! $item->description ?? '' !!}--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-lg-6 col-md-8">--}}
+{{--                            <div class="venture-img mx-1">--}}
+{{--                                <img src="{{ asset('storage/app/public/module/') }}/{{ isset($item['thumbnail']) ? $item['thumbnail'] : null }}" onerror="this.src='{{asset('public/assets/admin/img/100x100/2.png')}}'" alt="">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
+{{--            </div>--}}
         </div>
     </section>
     <!-- ==== Ecommerce Venture Section Ends Here ==== -->
@@ -3358,7 +3358,7 @@
             <div class="special-feature-wrapper wow fadeInUp">
                 @foreach ($special as $item)
                 @if ($item->status == '1')
-                    
+
                 <div class="feature-card">
                     <div class="feature-card-icon">
                         <img src="{{ asset('storage/app/public/special_criteria')}}/{{ isset($item['image']) ? $item['image'] : null }}" alt="{{$item['title']}}"
@@ -3448,7 +3448,7 @@
 
     <!-- ==== Counter Section Starts Here ==== -->
     @php($counter = $landing_data['counter_section'])
-    @if (isset($counter) && $counter['status'] == '1')    
+    @if (isset($counter) && $counter['status'] == '1')
     <section class="counter-section  mb--186px">
         <div class="container">
             <div class="counter-wrapper">
