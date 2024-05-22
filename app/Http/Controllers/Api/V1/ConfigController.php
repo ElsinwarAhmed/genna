@@ -314,7 +314,7 @@ class ConfigController extends Controller
         if ($validator->errors()->count()>0) {
             return response()->json(['errors' => Helpers::error_processor($validator)], 403);
         }
-        $response = Http::get('https://maps.googleapis.com/maps/api/geocode/json?latlng='.$request->lat.','.$request->lng.'&key='.$this->map_api_key);
+        $response = Http::get('https://maps.googleapis.com/maps/api/geocode/json?latlng='.$request->lat.','.$request->lng.'&key=web-252@upbeat-palace-422604-g4.iam.gserviceaccount.com');
         return $response->json();
     }
 
