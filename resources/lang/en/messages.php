@@ -2776,4 +2776,5 @@
   'config_data_updated' => 'Config data updated',
   'we_are_temporarily_unavailable_in_this_area' => 'We are temporarily unavailable in this area',
   'Unauthorized' => 'Unauthorized',
+  'zone_id_required' => 'Zone id required',
 );

@@ -18,7 +18,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if ($this->app->environment('local')) {
+            $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
+            $this->app->register(TelescopeServiceProvider::class);
+        }
     }
 
     /**
@@ -28,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
+
         try
         {
             Config::set('addon_admin_routes',$this->get_addon_admin_routes());
@@ -43,6 +46,6 @@ class AppServiceProvider extends ServiceProvider
         {
 
         }
-        
+
     }
 }

@@ -202,7 +202,8 @@ class Store extends Model
 
     public function scopeWithOpen($query,$longitude,$latitude)
     {
-        $query->selectRaw('*, IF(((select count(*) from `store_schedule` where `stores`.`id` = `store_schedule`.`store_id` and `store_schedule`.`day` = '.now()->dayOfWeek.' and `store_schedule`.`opening_time` < "'.now()->format('H:i:s').'" and `store_schedule`.`closing_time` >"'.now()->format('H:i:s').'") > 0), true, false) as open,ST_Distance_Sphere(point(longitude, latitude),point('.$longitude.', '.$latitude.')) as distance');
+        $query->selectRaw('*, IF(((select count(*) from `store_schedule` where `stores`.`id` = `store_schedule`.`store_id` and `store_schedule`.`day` = '.now()->dayOfWeek.' and `store_schedule`.`opening_time` < "'.now()->format('H:i:s').'" and `store_schedule`.`closing_time` >"'.now()->format('H:i:s').'") > 0), true, false) as open,ST_Distance_Sphere(point(longitude, latitude),point('.$longitude.', '.$latitude.')) as distance')
+            ->having('distance', '<=', 30000);
     }
 
     public function scopeWeekday($query)
@@ -219,7 +220,7 @@ class Store extends Model
                 return $query->where('locale', app()->getLocale());
             }]);
         });
-    }   
+    }
 
     public function scopeType($query, $type)
     {
@@ -235,12 +236,12 @@ class Store extends Model
         return $query;
 
     }
-    
+
     private function generateSlug($name)
     {
         $slug = Str::slug($name);
         if ($max_slug = static::where('slug', 'like',"{$slug}%")->latest('id')->value('slug')) {
-            
+
             if($max_slug == $slug) return "{$slug}-2";
 
             $max_slug = explode('-',$max_slug);
@@ -251,7 +252,7 @@ class Store extends Model
             }
         }
         return $slug;
-    } 
+    }
 
 
     protected static function boot()
@@ -263,5 +264,5 @@ class Store extends Model
         });
     }
 
-    
+
 }

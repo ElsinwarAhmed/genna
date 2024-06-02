@@ -113,7 +113,7 @@ class StoreController extends Controller
 
         usort($stores['stores'], function ($a, $b) {
             $key = 'avg_rating';
-            return $b[$key] - $a[$key]; 
+            return $b[$key] - $a[$key];
         });
 
         return response()->json($stores, 200);

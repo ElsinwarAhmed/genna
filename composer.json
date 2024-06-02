@@ -8,6 +8,7 @@
         "php": "^7.3|^8.1",
         "ext-curl": "*",
         "ext-json": "*",
+        "ext-simplexml": "*",
         "brian2694/laravel-toastr": "^5.54",
         "doctrine/dbal": "^3.3",
         "firebase/php-jwt": "^6.4",
@@ -16,22 +17,22 @@
         "intervention/image": "^2.5",
         "laravel/framework": "^10.0",
         "laravel/passport": "^11.0",
+        "laravel/telescope": "^5.0",
         "laravel/tinker": "^2.5",
         "laravelpkg/laravelchk": "dev-master",
         "maatwebsite/excel": "^3.1",
         "madnest/madzipper": "*",
         "matanyadaev/laravel-eloquent-spatial": "^3.1",
         "mercadopago/dx-php": "2.4.3",
-        "nwidart/laravel-modules": "9.0",
         "mpdf/mpdf": "^8.0",
-        "rap2hpoutre/fast-excel": "^5.2",
-        "stripe/stripe-php": "^10.10",
+        "nwidart/laravel-modules": "9.0",
         "paypal/paypal-checkout-sdk": "^1.0",
+        "rap2hpoutre/fast-excel": "^5.2",
         "razorpay/razorpay": "^2.8",
-        "unicodeveloper/laravel-paystack": "^1.0",
-        "xendit/xendit-php": "^2.19",
+        "stripe/stripe-php": "^10.10",
         "twilio/sdk": "^6.39",
-        "ext-simplexml": "*"
+        "unicodeveloper/laravel-paystack": "^1.0",
+        "xendit/xendit-php": "^2.19"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
@@ -86,7 +87,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "laravel/telescope"
+            ]
         }
     },
     "config": {

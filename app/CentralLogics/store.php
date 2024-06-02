@@ -16,9 +16,8 @@ class StoreLogic
     public static function get_stores( $zone_id, $filter, $type, $store_type, $limit = 10, $offset = 1, $featured=false,$longitude=0,$latitude=0)
     {
         $paginator = Store::
-        withOpen($longitude??0,$latitude??0)
-        ->
-        with(['discount'=>function($q){
+        withOpen($longitude??0,$latitude??0, 30000)
+        ->with(['discount'=>function($q){
             return $q->validate();
         }])
         ->whereHas('module',function($query){
@@ -85,12 +84,12 @@ class StoreLogic
             }
 
             $category_ids = array_values(array_unique($mergedIds));
-            
+
             $store->category_ids = $category_ids;
 
             $store->discount_status = !empty($store->items->where('discount', '>', 0));
         });
-        
+
         /*$paginator->total();*/
         return [
             'total_size' => $paginator->total(),
@@ -204,7 +203,7 @@ class StoreLogic
             }
 
             $category_ids = array_values(array_unique($mergedIds));
-            
+
             $store->category_ids = $category_ids;
 
             $store->discount_status = !empty($store->items->where('discount', '>', 0));
@@ -234,7 +233,7 @@ class StoreLogic
         })
         ->Active()
         ->type($type)
-        ->whereRaw("LENGTH(rating) > 0") 
+        ->whereRaw("LENGTH(rating) > 0")
         ->paginate($limit??50, ['*'], 'page', $offset??1);
 
         return [
@@ -315,7 +314,7 @@ class StoreLogic
         })
         ->active()->orderBy('open', 'desc')->orderBy('distance')->type($type)->paginate($limit, ['*'], 'page', $offset);
 
-                
+
         $paginator->each(function ($store) {
             $category_ids = DB::table('items')
             ->join('categories', 'items.category_id', '=', 'categories.id')
@@ -342,7 +341,7 @@ class StoreLogic
             }
 
             $category_ids = array_values(array_unique($mergedIds));
-            
+
             $store->category_ids = $category_ids;
             $store->discount_status = !empty($store->items->where('discount', '>', 0));
         });
